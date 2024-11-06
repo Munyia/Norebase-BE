@@ -3,7 +3,7 @@ import { connectDB } from "./db.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import { getLikesCount, incrementLikeCount } from "./controllers/articleControllers.js";
+import { getLikesCount, incrementLikeCount } from "./controller/likeController.js";
 
 dotenv.config();
 const app = express();
@@ -27,10 +27,10 @@ app.use(limiter);
 
 //default test route
 app.get("/", (req, res) => {
-  res.send("NorebaseBETC server is live!");
+  res.send("Norebase server is live!");
 });
 
-app.route('/api/articles/:articleId/likes')
+app.route('/api/likes/:articleId')
 .get(getLikesCount) // Get Like Count
 .post(incrementLikeCount) // Increment Like Count
 
