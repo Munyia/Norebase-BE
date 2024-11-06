@@ -27,7 +27,7 @@ npm install
 3. Create a .env file in the root directory with the following content (ensure you have MongoDB credentials):
 
 MONGO_URI=<your-mongo-uri>
-PORT=3000
+PORT=2002
 
 4. Start the application:
 npm run server
